@@ -249,11 +249,18 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
-main .section.light,
+
 main .section.highlight {
   background-color: #fff;
   margin: 0;
   padding: 40px 0;
+}
+
+main .section.light{
+  background: #F7F8FB;
+  margin: 0;
+  padding: 40px ;
+  text-align: center;
 }
 
 #speakers{
