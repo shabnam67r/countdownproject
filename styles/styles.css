@@ -14,9 +14,9 @@
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
+  --dark-color: #042164;
+  --text-color: #333;
+  --link-color: #232B76;
   --link-hover-color: #1d3ecf;
 
   /* fonts */
@@ -110,6 +110,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
+  color: var(--dark-color);
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
@@ -127,6 +128,7 @@ pre,
 blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+  color: var(--text-color);
 }
 
 code,
@@ -166,6 +168,7 @@ a:hover {
 }
 
 /* buttons */
+
 a.button:any-link,
 button {
   box-sizing: border-box;
