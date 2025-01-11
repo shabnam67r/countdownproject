@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 24px;
     text-align: center;
 }
@@ -11,18 +11,28 @@
 .blog > ul > li {
     /* border: 1px solid #dadada; */
     background-color: var(--background-color);
+    display: flex;
 }
 
-.blog .speakers-card-body {
+.blog .blog-card-body {
     margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.blog .speakers-card-image {
+.blog .blog-card-body p{
+    text-align: start;
+}
+
+.blog .blog-card-image {
     line-height: 0;
+    width: 100%;
+    margin: 16px;
+
 }
 
 .blog > ul > li img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
+    object-fit: cover;
 }
