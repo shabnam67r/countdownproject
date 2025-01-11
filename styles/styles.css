@@ -245,10 +245,6 @@ main > .section > div {
   padding: 24px;
 }
 
-main > .section > div.countdown-wrapper{
-  padding:0
-}
-
 main > .section:first-of-type {
   margin-top: 0;
 }

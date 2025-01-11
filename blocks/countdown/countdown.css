@@ -1,3 +1,172 @@
-.countdown-container .countdown{
-    background-color: brown;
+/* Countdown Section Container */
+.countdown-container {
+    background-color: #ffbfbf; /* Fallback color in case the image doesn't load */
+    background-image: url("../../assets/images/Group\ 1671.png");
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background Image */
+.countdown-container picture img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Content wrapper */
+.countdown-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: row;
+}
+
+.countdown-button-login {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-image: url("../../assets/images/Group\ 1669.png");
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.countdown-button-register {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-image: url("../../assets/images/Group\ 1670.png");
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.countdown-button:hover {
+    background-color: #0056b3;
+}
+
+/* Right section (texts and countdown) */
+.countdown-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Left section (buttons) */
+.countdown-right {
+    text-align: left;
+    color: #fff;
+    width: 50%;
+}
+
+/* Content Wrapper */
+.countdown-content {
+    position: relative;
+    text-align: start;
+    color: white; /* Ensure visibility on the image */
+    font-family: Arial, sans-serif;
+    z-index: 1; /* Above the image */
+    padding: 50px 0;
+}
+
+/* Main Text (First Line) */
+.countdown-main-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-align: left;
+    color: #042164;
+    opacity: 1;
+}
+
+/* Subtitle (H3) */
+.countdown-sub-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: -0.36px;
+    color: #fff;
+    opacity: 1;
+}
+
+/* Current Date Text */
+.current-date {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 15px;
+    color: white; /* Adjust color to contrast with the background */
+}
+
+/* Additional Text (Third Line) */
+.countdown-additional-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    color: #232b76;
+    opacity: 1;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between each time unit */
+    margin: 20px 0;
+}
+
+/* Individual time unit container */
+.countdown-time-unit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #232b7679; /* Replace with desired background color */
+    color: #333; /* Replace with desired text color */
+    border-radius: 10px; /* Optional: Rounded corners */
+    padding: 10px 20px; /* Adjust padding for spacing */
+    box-shadow: 0 4px 6px #0000001a; /* Optional: Add a shadow */
+    z-index: 100;
+}
+
+/* Number inside the time unit */
+.countdown-number {
+    font-size: 32px; /* Adjust font size for the number */
+    font-weight: bold;
+    color: #fff; /* Replace with desired label color */
+    z-index: 1;
+}
+
+/* Label inside the time unit */
+.countdown-label {
+    font-size: 14px; /* Adjust font size for the label */
+    font-weight: normal;
+    margin-top: 5px; /* Add space between the number and label */
+    text-transform: uppercase;
+    color: #fff; /* Replace with desired label color */
+    z-index: 1;
+}
+
+/* Optional: Styling when the event has started */
+.event-started {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
 }
