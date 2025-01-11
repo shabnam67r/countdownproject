@@ -36,7 +36,7 @@ header nav[aria-expanded='true'] {
     justify-content: space-between;
     gap: 0 32px;
     max-width: 1264px;
-    padding: 0 32px;
+    padding: 40px 32px 24px;
   }
 
   header nav[aria-expanded='true'] {
@@ -51,7 +51,7 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: var(--link-color);;
 }
 
 /* hamburger */

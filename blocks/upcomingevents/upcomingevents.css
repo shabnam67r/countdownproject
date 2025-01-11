@@ -1,3 +1,54 @@
-.carousel{
-display: flex;
+.upcomingevents-container {
+    background-color: #f7f8fb;
+    padding: 50px 0;
+}
+
+#upcoming-events {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.upcomingevents-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Keeps items in a single line */
+}
+
+.upcomingevents {
+    display: flex;
+    gap: 10px; /* Space between cards */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding animation */
+    cursor: grab;
+}
+
+.upcomingevents:active {
+    cursor: grabbing;
+}
+
+.upcomingevents div {
+    flex: 0 0 calc((100% / 4.5) - 10px); /* 4 full cards + 0.5 card */
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.upcomingevents.carousel div {
+    min-width: 300px; /* Adjust based on your design */
+    margin-right: 16px; /* Add spacing between items */
+}
+
+.upcomingevents div div:first-child {
+    background-color: #07d8d8;
+    padding: 20px;
+}
+
+.upcomingevents.carousel div > div:last-child p {
+    white-space: normal; /* Allows text to wrap */
+    width: 100%; /* Adjust width to control wrapping */
+    word-break: break-word; /* Break long words if necessary */
+}
+
+@media (width >= 768px) {
+    .upcomingevents.carousel div {
+        min-width: 200px;
+    }
 }
