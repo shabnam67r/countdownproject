@@ -1,42 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const upcomingEventsSection = document.getElementById('upcoming-events-section');
-  // Create a <picture> element for the background image
+  const upcomingEventsSection = document.getElementById('countdown-section');
+
+  // Add a <picture> element for the background image
   const picture = document.createElement('picture');
   const img = document.createElement('img');
-  // Set the image source and attributes
-  img.src = 'https://via.placeholder.com/1920x1080'; // Replace with your image URL
-  img.alt = 'Upcoming Events Background';
+  img.src = '../../assets/images/Group 1671.png'; // Replace with your image URL
+  img.alt = 'Countdown Background';
+  img.className = 'background-image'; // Add class for styling
   picture.appendChild(img);
-  // Append the picture element to the upcoming events section
   upcomingEventsSection.appendChild(picture);
-  // Create an <h1> element for the heading
-  const heading = document.createElement('h1');
-  heading.textContent = 'Upcoming Events'; // Replace with your desired text
-  upcomingEventsSection.appendChild(heading);
-  // Now create the event list
-  const eventsWrapper = document.createElement('div');
-  eventsWrapper.className = 'events-wrapper';
-  // Example event item
-  const eventItem = document.createElement('div');
-  eventItem.className = 'event-item';
-  // Add a picture for the event
-  const eventPicture = document.createElement('picture');
-  const eventImg = document.createElement('img');
-  eventImg.src = 'https://via.placeholder.com/400x300'; // Replace with actual event image URL
-  eventImg.alt = 'Event Image';
-  eventPicture.appendChild(eventImg);
-  // Add event details
-  const eventDetails = document.createElement('div');
-  eventDetails.className = 'event-details';
-  const eventTitle = document.createElement('h2');
-  eventTitle.textContent = 'Event Title'; // Replace with actual event title
-  const eventDescription = document.createElement('p');
-  eventDescription.textContent = 'Event description goes here'; // Replace with actual event description
-  eventDetails.append(eventTitle, eventDescription);
-  // Append the event image and details to the event item
-  eventItem.append(eventPicture, eventDetails);
-  // Append the event item to the events wrapper
-  eventsWrapper.appendChild(eventItem);
-  // Finally, append the events wrapper to the upcoming events section
-  upcomingEventsSection.appendChild(eventsWrapper);
+
+  // Add the titles
+  const titleWrapper = document.createElement('div');
+  titleWrapper.className = 'titles-wrapper';
+
+  const mainText = document.createElement('p');
+  mainText.textContent = 'Don’t Miss the Excitement!'; // First normal text
+  mainText.className = 'main-text';
+
+  const subTitle = document.createElement('h3');
+  subTitle.textContent = 'Upcoming Events'; // H3 heading
+  subTitle.className = 'sub-title';
+
+  const additionalText = document.createElement('p');
+  additionalText.textContent = 'Plan your schedule and join us for these unforgettable moments.'; // Third normal text
+  additionalText.className = 'additional-text';
+
+  titleWrapper.append(mainText, subTitle, additionalText);
+  upcomingEventsSection.appendChild(titleWrapper);
+
+  // Add the countdown timer
+  const countdownTimer = document.createElement('div');
+  countdownTimer.className = 'countdown-timer';
+  countdownTimer.textContent = 'Loading countdown...';
+  upcomingEventsSection.appendChild(countdownTimer);
+
+  // Countdown functionality
+  const countdownDate = new Date('2025-01-15T00:00:00').getTime();
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
+
+    if (distance < 0) {
+      countdownTimer.textContent = 'The event has started!';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownTimer.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
+
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  countdownInterval();
 });
