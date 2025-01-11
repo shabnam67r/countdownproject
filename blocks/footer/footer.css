@@ -20,7 +20,7 @@ footer .footer p {
   }
 }
 
-.default-content-wrapper{
+.footer .default-content-wrapper{
   display: flex;
   justify-content: space-between;
   align-items: center;

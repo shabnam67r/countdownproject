@@ -1,54 +1,47 @@
-.upcomingevents-container {
-    background-color: #f7f8fb;
-    padding: 50px 0;
-}
-
-#upcoming-events {
-    margin: 50px 0;
+/* Scope styles to the specific block with upcoming events */
+.upcomingevents-container{
+    background-color: #f7f8fb; /* Add your desired background color */
     text-align: center;
 }
 
-.upcomingevents-wrapper {
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Keeps items in a single line */
-}
-
-.upcomingevents {
-    display: flex;
+.upcoming-events-carousel {
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    display: flex; /* Align items horizontally */
     gap: 10px; /* Space between cards */
-    transition: transform 0.3s ease-in-out; /* Smooth sliding animation */
-    cursor: grab;
-}
-
-.upcomingevents:active {
-    cursor: grabbing;
-}
-
-.upcomingevents div {
-    flex: 0 0 calc((100% / 4.5) - 10px); /* 4 full cards + 0.5 card */
-    background-color: #fff;
-    text-align: center;
+  }
+  
+  /* Style for the individual event cards inside this specific block */
+  .upcoming-events-carousel li {
+    flex: 0 0 calc(15% - 10px); /* Shows 4 full cards + half of the 5th */
+    display: flex;
+    flex-direction: column; /* Stack content within the card */
+    background-color: white;
     border-radius: 10px;
-}
-
-.upcomingevents.carousel div {
-    min-width: 300px; /* Adjust based on your design */
-    margin-right: 16px; /* Add spacing between items */
-}
-
-.upcomingevents div div:first-child {
+    transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+  }
+  
+  /* Customize card image section */
+  .upcoming-events-carousel .event-card-image {
     background-color: #07d8d8;
     padding: 20px;
-}
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Customize card body section */
+  .upcoming-events-carousel .event-card-body {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .upcoming-events-carousel li div:first-child{ 
+    background-color: #232B76;
+  }
 
-.upcomingevents.carousel div > div:last-child p {
-    white-space: normal; /* Allows text to wrap */
-    width: 100%; /* Adjust width to control wrapping */
-    word-break: break-word; /* Break long words if necessary */
-}
-
-@media (width >= 768px) {
-    .upcomingevents.carousel div {
-        min-width: 200px;
-    }
-}
+  .upcoming-events-carousel li div:first-child p{ 
+    color: #fff;
+  }
