@@ -1,7 +1,14 @@
 /* Countdown Section Container */
+.countdown-wrapper {
+    background-image: url("../../assets/images/bg.png"); /* Replace with the actual image URL */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Adjust height to fit your needs */
+}
+
 .countdown-container {
-    background-color: #ffbfbf; /* Fallback color in case the image doesn't load */
-    background-image: url("../../assets/images/Group\ 1671.png");
     position: relative;
     display: flex;
     justify-content: center;
@@ -17,6 +24,7 @@
     object-fit: cover;
     position: absolute;
     z-index: -1;
+    top: 0;
 }
 
 /* Content wrapper */
@@ -25,33 +33,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    width: 90%;
     max-width: 1200px;
     flex-wrap: row;
 }
 
-.countdown-button-login {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-image: url("../../assets/images/Group\ 1669.png");
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-
+.countdown-content-wrapper .countdown-left a.button:any-link,
+.countdown-button-login,
 .countdown-button-register {
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-image: url("../../assets/images/Group\ 1670.png");
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+    width: 320px;
+    display: contents;
+    height: 50px;
 }
 
 .countdown-button:hover {
@@ -69,7 +60,6 @@
 .countdown-right {
     text-align: left;
     color: #fff;
-    width: 50%;
 }
 
 /* Content Wrapper */
@@ -125,7 +115,7 @@
 /* Countdown Timer */
 .countdown-timer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px; /* Space between each time unit */
     margin: 20px 0;
@@ -140,7 +130,7 @@
     background-color: #232b7679; /* Replace with desired background color */
     color: #333; /* Replace with desired text color */
     border-radius: 10px; /* Optional: Rounded corners */
-    padding: 10px 20px; /* Adjust padding for spacing */
+    padding: 5px; /* Adjust padding for spacing */
     box-shadow: 0 4px 6px #0000001a; /* Optional: Add a shadow */
     z-index: 100;
 }
@@ -169,4 +159,16 @@
     color: red;
     font-weight: bold;
     text-align: center;
+}
+
+@media (width<= 767px) {
+    .countdown-content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .countdown-left,
+    .countdown-right {
+        text-align: center;
+    }
 }

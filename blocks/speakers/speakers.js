@@ -16,9 +16,9 @@ function getSpeakerData(index) {
 }
 
 // Function to show the modal with speaker details
-function showModal(modal, modalBody, index) {
+function showModal(modal, modalBody, speakerData) {
   // Correct destructuring for 'getSpeakerData'
-  const { name, bio } = getSpeakerData(index);
+  const { name, bio } = speakerData;
   modalBody.innerHTML = `
     <h2>${name}</h2>
     <p>${bio}</p>
@@ -47,8 +47,7 @@ function addModalFunctionality(block) {
 
   block.querySelectorAll('.see-bio-button').forEach((button) => {
     button.addEventListener('click', () => {
-      const { index } = button.dataset; // Destructure dataset to extract index
-      const speakerData = getSpeakerData(index); // Fetch speaker data
+      const speakerData = getSpeakerData(button.dataset.index); // Fetch speaker data
       showModal(modal, modalBody, speakerData); // Show modal
     });
   });

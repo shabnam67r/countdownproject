@@ -1,5 +1,5 @@
 /* Scope styles to the specific block with upcoming events */
-.upcomingevents-container{
+.upcomingevents-container {
     background-color: #f7f8fb; /* Add your desired background color */
     text-align: center;
 }
@@ -11,37 +11,94 @@
     overflow-x: auto; /* Allows horizontal scrolling */
     display: flex; /* Align items horizontally */
     gap: 10px; /* Space between cards */
-  }
-  
-  /* Style for the individual event cards inside this specific block */
-  .upcoming-events-carousel li {
-    flex: 0 0 calc(15% - 10px); /* Shows 4 full cards + half of the 5th */
+}
+
+/* Style for the individual event cards inside this specific block */
+.upcoming-events-carousel li {
+    flex: 0 0 calc(35% - 10px); /* Shows 4 full cards + half of the 5th */
     display: flex;
     flex-direction: column; /* Stack content within the card */
     background-color: white;
     border-radius: 10px;
     transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
-  }
-  
-  /* Customize card image section */
-  .upcoming-events-carousel .event-card-image {
+}
+
+/* Customize card image section */
+.upcoming-events-carousel .event-card-image {
     background-color: #07d8d8;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-  }
-  
-  /* Customize card body section */
-  .upcoming-events-carousel .event-card-body {
+}
+
+/* Customize card body section */
+.upcoming-events-carousel .event-card-body {
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-  }
-  
-  .upcoming-events-carousel li div:first-child{ 
-    background-color: #232B76;
+}
+
+.upcoming-events-carousel li div:first-child p {
+  color: #fff;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:first-child {
+    color: #333;
+    font-size: 15px;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:nth-child(2) {
+    color: #009fe3;
+    font-size: 15px;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:nth-child(3) {
+    color: #009fe3;
+    font-size: 15px;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:last-child {
+    margin-top: 30px;
+    color: #fff;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:last-child a {
+    color: #fff;
+    font-size: 15px;
+}
+
+
+.upcoming-events-carousel li .event-card-body:last-child p:last-child strong:first-child {
+    background-color: #009fe3;
+    border-radius: 29px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.upcoming-events-carousel li .event-card-body:last-child p:last-child strong:last-child {
+    background: #042164 0% 0% no-repeat padding-box;
+    border-radius: 29px;
+    opacity: 1;
+    padding: 10px;
+}
+
+.upcoming-events-carousel li div:first-child {
+    background-color: #232b76;
+}
+
+@media (width<= 893px) {
+  .upcoming-events-carousel li .event-card-body:last-child p:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
   }
 
-  .upcoming-events-carousel li div:first-child p{ 
-    color: #fff;
+  .upcoming-events-carousel {
+    flex-wrap: wrap;
   }
+
+  .upcoming-events-carousel li {
+    flex: auto;
+  }
+}

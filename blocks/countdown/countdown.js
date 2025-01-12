@@ -2,15 +2,6 @@ export default function decorate(block) {
   // Create a wrapper container for the countdown section
   const countdownContainer = document.createElement('div');
   countdownContainer.className = 'countdown-container';
-
-  // Add the background image
-  const picture = document.createElement('picture');
-  const img = document.createElement('img');
-  img.src = '../../assets/images/Group 1671.png'; // Replace with your image URL
-  img.alt = 'Countdown Background';
-  picture.appendChild(img);
-  countdownContainer.appendChild(picture);
-
   // Add the main content wrapper to split left and right sections
   const countdownContentWrapper = document.createElement('div');
   countdownContentWrapper.className = 'countdown-content-wrapper';
@@ -21,11 +12,16 @@ export default function decorate(block) {
 
   const button1 = document.createElement('button');
   button1.className = 'countdown-button-login';
-  button1.textContent = 'LOGIN'; // Replace with desired button text
-
+  const loginImage = document.createElement('img');
+  loginImage.src = '../../assets/images/login.png'; // Update with the correct path
+  loginImage.alt = 'Login Icon';
+  button1.prepend(loginImage);
   const button2 = document.createElement('button');
   button2.className = 'countdown-button-register';
-  button2.textContent = 'REGISTER'; // Replace with desired button text
+  const registerImage = document.createElement('img');
+  registerImage.src = '../../assets/images/register.png'; // Update with the correct path
+  registerImage.alt = 'Register Icon';
+  button2.prepend(registerImage);
 
   countdownLeft.append(button1, button2);
 

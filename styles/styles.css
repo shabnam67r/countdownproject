@@ -240,7 +240,6 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
   margin: auto;
   padding: 24px;
 }
@@ -251,7 +250,8 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0;
+    max-width: 2550px;
   }
 }
 
@@ -276,4 +276,5 @@ main .section.light{
 
 .default-content-wrapper{
   flex-direction: row;
+  margin: 50px 0;
 }
